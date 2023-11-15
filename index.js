@@ -16,6 +16,12 @@ app.use(cors());
 app.use("/user",userRouter);
 app.use("/book",booksrouter);
 
+app.get("/",(req,res)=>{
+    res.status(200).send({
+        message:"Welcome To Library-App Backend"
+    })
+});
+
 app.listen(process.env.port,async ()=>{
     try {
         await connection;
