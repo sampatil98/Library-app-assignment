@@ -30,7 +30,7 @@ userRouter.post("/register",async(req,res)=>{
                 })
                 
             }else{
-              return  res.status(400).send({
+                return  res.status(400).send({
                     isError:true,
                     message:err
                 })
@@ -50,7 +50,7 @@ userRouter.post("/login",async(req,res)=>{
         const {email,password}=req.body;
 
         const user= await UserModel.findOne({email});
-        console.log(user);
+        
 
         if(!user){
             return res.status(400).send({
